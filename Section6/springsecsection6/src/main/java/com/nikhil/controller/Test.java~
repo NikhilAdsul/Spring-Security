@@ -1,0 +1,28 @@
+package com.nikhil.controller;
+
+public class Test {
+        public static void main(String[] args) {
+            String abc = "aaAbcABBcC";
+            String result = findFirstPair(abc);
+            System.out.println("Output - " + result); // Output - ab
+        }
+
+    public static String findFirstPair(String str) {
+        if (str == null || str.length() < 2) {
+            return "";
+        }
+
+        for (int i = 0; i < str.length() - 1; i++) {
+            char char1 = Character.toLowerCase(str.charAt(i));
+            char char2 = Character.toLowerCase(str.charAt(i + 1));
+
+            if (char1 < char2) {
+                return "" + char1 + char2;
+            }
+        }
+        return "";
+    }
+}
+
+
+
